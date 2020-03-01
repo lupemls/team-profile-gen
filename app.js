@@ -23,7 +23,7 @@ const memberPrompt = (position) => {
             choices : ['Manager', 'Engineer', 'Intern', 'No More Employees To Add']
         } 
     ).then(function(response) {
-        console.log(response);
+        // console.log(response);
         let employee;
         switch (response.role){
             case 'Manager':
@@ -82,10 +82,10 @@ const askInfo = (role) => {
             employee = new Engineer(responses.name, responses.id, responses.email, responses.moreInfo);
         }else{
             employee = new Intern(responses.name, responses.id, responses.email, responses.moreInfo);
-        }
+        };
         employees.push(employee);
         memberPrompt();
-    })
+    });
 };
 
 //renders the html from the array of employees, and writes it to a new html file
@@ -96,12 +96,13 @@ const writeRenderedHTML = () => {
     //checks to see if the output folder exists, if not, it creates it
     if(!fs.existsSync('./output')){
         fs.mkdirSync('./output');
-    }
+    };
 
     //writes the html file using the rendered html
     fs.writeFile(outputPath, employeesHTML, (err) => {
         if(err){
             throw err;
         };
+        console.log('Generating html to ./output/team.html');
     });
 };

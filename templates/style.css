@@ -1,0 +1,14 @@
+body{
+    background: rgb(132, 163, 221);
+}
+.card{
+    margin: 0px 1em;
+}
+.card-header{
+    background: salmon;
+}
+.jumbotron{
+    background: rgb(98, 192, 187);
+    color: white;
+    border-bottom: solid white 2px;
+}
